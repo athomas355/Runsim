@@ -40,3 +40,11 @@ Useful links:
     https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html
     https://gcc.gnu.org/onlinedocs/gcc/Overall-Options.html#Overall-Options describes what the -c option dopes
     https://www.man7.org/linux/man-pages/man3/shm_open.3.html
+    https://stackoverflow.com/questions/3673226/how-to-print-time-in-format-2009-08-10-181754-811#3673291
+    https://linux.die.net/man/3/strcat
+    https://linux.die.net/man/3/fputs
+    https://www.geeksforgeeks.org/fork-system-call/
+    https://www.geeksforgeeks.org/exec-family-of-functions-in-c/
+    https://manpages.ubuntu.com/manpages/xenial/man2/execve.2.html
+    https://www.ibm.com/docs/en/zos/2.4.0?topic=functions-itoa-convert-int-into-string
+    https://linux.die.net/man/3/sprintf

@@ -12,14 +12,14 @@
 int main(int argc, char* argv[]) {
     
     //number of licenses from command line
-    int numOfLicenses = strtol(argv[1], NULL, 0);;
+    int numOfLicenses = strtol(argv[1], NULL, 0);
 
     //command line error checking
 
     //connect to shared memory
     char *block = attach_memory_block(FILENAME, BLOCK_SIZE);
     if(block == NULL) {
-        printf("Error: couldn't get block\n");
+        printf("runsim: ERROR: couldn't get block\n");
         return -1;
     }
 

@@ -78,3 +78,11 @@ int addtolicenses(int n) {
 int removelicenses(int n) {
     return 0;
 }
+
+void logmsg(char* msg) {
+    FILE *file = fopen("logfile", "a");
+
+    fputs(msg, file);
+
+    fclose(file);
+}
