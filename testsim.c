@@ -14,6 +14,7 @@ int main(int argc, char* argv[]) {
 
     int sleep_time = strtol(argv[1], NULL, 0);
     int repeat_factor = strtol(argv[2], NULL, 0);
+    printf("testsim instance #: %s\n", argv[3]);
     
     //error check the command line inputs
     if(sleep_time <= 0) {
@@ -22,7 +23,7 @@ int main(int argc, char* argv[]) {
     }
 
     if(repeat_factor <= 0) {
-        printf("testsim: ERROR: repeat factor must be positive integer\n");
+        printf("testsim: ERROR: repeat factor %s must be positive integer\n", argv[2]);
         exit(-1);
     }
     
@@ -33,7 +34,7 @@ int main(int argc, char* argv[]) {
     int currentPID;
     signal(SIGINT, sig_handler);    //signal handling for ctrl+c
     signal(SIGALRM,sig_handler); // Register signal handler
-    alarm(3);  // Scheduled alarm after # seconds                                
+    alarm(20);  // Scheduled alarm after # seconds                                
 
     char *block = attach_memory_block(FILENAME, BLOCK_SIZE);
     if(block == NULL) {
