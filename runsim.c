@@ -23,10 +23,23 @@ int main(int argc, char* argv[]) {
         return -1;
     }
 
-    //write to shared memory
-    printf("Writing: \"%s\"\n", "Hello my name is Jeff");
-    strncpy(block, "Hello my name is Ash", BLOCK_SIZE);
-    
+    //this is a regression test
+    //write to shared memory 
+    #define MSG "Hello my name is Ash"
+    printf("Writing from runsim: \"%s\"\n", MSG);
+    strncpy(block, MSG, BLOCK_SIZE);
+
+    //fork runsim here and exec child process to testsim.c
+    // child process because return value zero
+    if (fork() == 0) {
+        execve("testsim", argv, NULL);
+    }
+    // parent process because return value non-zero.
+    else {
+        sleep(3);
+        printf("Hello from Parent!\n");
+    }
+
     //detach from shared memory
     detach_memory_block(block);
 
