@@ -48,3 +48,4 @@ Useful links:
     https://manpages.ubuntu.com/manpages/xenial/man2/execve.2.html
     https://www.ibm.com/docs/en/zos/2.4.0?topic=functions-itoa-convert-int-into-string
     https://linux.die.net/man/3/sprintf
+    https://www.man7.org/linux/man-pages/man2/execve.2.html

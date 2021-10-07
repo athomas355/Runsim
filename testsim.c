@@ -7,6 +7,8 @@
 
 void sig_handler(int signum){
     printf("Caught signal %d, coming out...\n", signum);
+    detach_memory_block(block);
+    //also need to destroy shared memory
     abort();
 }
 
@@ -42,7 +44,7 @@ int main(int argc, char* argv[]) {
         return -1;
     }
 
-    printf("Reading from testsim \"%s\"\n", block);
+    printf("Reading from testsim \"%s\"\n", block + sizeof(int));
 
 
     for(int i = 0; i < repeat_factor; i++) {

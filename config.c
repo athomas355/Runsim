@@ -52,31 +52,31 @@ bool destroy_memory_block(char *filename){
 
 //Blocks until a license is available.
 int getlicense(void) {
-
+    
     return 0;
 }           
 
 //Increments the number of available licenses.
 int returnlicense(void) {
-
-    return 0;
+    *nlicenses++;
+    return *nlicenses;
 }  
 
 //Performs any needed initialization of the license object.
-int initlicense(void) {
-
+int initlicense(int n) {
+    nlicenses = (int*)block;
+    *nlicenses = n;
     return 0;
 } 
 
 //Addsnlicenses to the number available.
-int addtolicenses(int n) {
-
-    return 0;
+void addtolicenses(int n) {
+    *nlicenses = n + *nlicenses;
 }   
 
 //Decrements the number of licenses byn tashish715  Valleyhawks123
-int removelicenses(int n) {
-    return 0;
+void removelicenses(int n) {
+    *nlicenses = n - *nlicenses;
 }
 
 void logmsg(char* msg) {
@@ -86,3 +86,15 @@ void logmsg(char* msg) {
 
     fclose(file);
 }
+
+int read_data_file(char *time_delay[], char *repeat_factor[] ){
+    char dummy[10000];
+    int line_ctr = 0;
+    while (!feof(stdin)) {
+      scanf("%s %s %s", dummy, time_delay[line_ctr], repeat_factor[line_ctr]);
+      line_ctr++;
+    }
+
+    return line_ctr;
+}
+    

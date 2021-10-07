@@ -6,8 +6,8 @@ OBJS = runsim.o config.o
 
 $(TARGET): $(OBJS) 							#LFLAGS has to come in at the end
 	$(CC) -o $(TARGET) $(OBJS) $(LFLAGS)
-	$(CC) -o destroy_shmem destroy_shmem.c config.c config.h $(LFLAGS)
-	$(CC) -o testsim testsim.c config.c config.h $(LFLAGS)
+	$(CC) $(CFLAGS) -o destroy_shmem destroy_shmem.c config.c config.h $(LFLAGS)
+	$(CC) $(CFLAGS) -o testsim testsim.c config.c config.h $(LFLAGS)
 
 %.o: %.c %.h
 	$(CC) $(CFLAGS) -c $< -o $@
